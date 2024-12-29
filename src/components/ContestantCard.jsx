@@ -17,10 +17,11 @@ const ContestantCard = ({ contestant, onClick, highlighted }) => {
   };
 
   const getRankChangeIndicator = (contestant) => {
-    const recentRank = contestant["Ep. 11"]; // UPDATE LATER
-    const previousRank = contestant["Ep. 8"]; // UPDATE LATER
+    const recentRank = contestant["Ep. 12"]; // UPDATE LATER
+    const previousRank = contestant["Ep. 11"]; // UPDATE LATER
+    const finalRank = contestant["Final"]; // UPDATE LATER
 
-    if (recentRank === -1 || previousRank === -1) {
+    if (recentRank === -1 || previousRank === -1 || finalRank > 7) {
       return null; // Handle if the data is missing
     }
 
@@ -48,7 +49,7 @@ const ContestantCard = ({ contestant, onClick, highlighted }) => {
         ${
           highlighted && highlighted === contestant.Name
             ? "scale-110 shadow-md z-30"
-            : "hover:scale-110 hover:shadow-md hover:z-20"
+            : "hover:scale-110 hover:shadow-md hover:z-40"
         }`}
       style={{
         backgroundColor:

@@ -133,7 +133,8 @@ for row in table_data[3:]:
             
         ep8 = string_to_int(remove_references(row[8]))
         ep11 = string_to_int(remove_references(row[9]))
-        final = string_to_int(remove_references(row[10]))
+        ep12 = string_to_int(remove_references(row[10]))
+        final = string_to_int(remove_references(row[11]))
         img = get_image_url(name) + ".jpg"
         if ep5 > 70:
             ep6 = -1
@@ -143,6 +144,8 @@ for row in table_data[3:]:
         if ep8 > 35:
             ep11= -1
 
+        if ep11 > 21:
+            ep12= -1
 
         data.append({
                 "Company": company,
@@ -155,6 +158,7 @@ for row in table_data[3:]:
                 "Ep. 6": ep6,
                 "Ep. 8": ep8,
                 "Ep. 11": ep11,
+                "Ep. 12": ep12,
                 "Final": final,
                 "Image": img
             })

@@ -18,8 +18,8 @@ const ContestantCard = ({ contestant, onClick }) => {
   };
 
   const getRankChangeIndicator = (contestant) => {
-    const recentRank = contestant["Ep. 11"]; // CHANGE THIS LATERRRRR
-    const previousRank = contestant["Ep. 8"];
+    const recentRank = contestant["Ep. 12"]; // CHANGE THIS LATERRRRR
+    const previousRank = contestant["Ep. 11"];
 
     if (recentRank === -1 || previousRank === -1) {
       return null;

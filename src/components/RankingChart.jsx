@@ -14,7 +14,15 @@ import { FaGripHorizontal } from "react-icons/fa";
 
 const RankingChart = ({ contestants, highlighted }) => {
   const convertData = (contestants) => {
-    const episodes = ["Ep. 2", "Ep. 3", "Ep. 5", "Ep. 6", "Ep. 8", "Ep. 11"];
+    const episodes = [
+      "Ep. 2",
+      "Ep. 3",
+      "Ep. 5",
+      "Ep. 6",
+      "Ep. 8",
+      "Ep. 11",
+      "Ep. 12",
+    ];
     return episodes
       .map((episode) => {
         const dataPoint = { name: episode };
@@ -34,6 +42,8 @@ const RankingChart = ({ contestants, highlighted }) => {
 
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
+      const episode = payload[0]?.payload?.name;
+
       const filteredPayload = highlighted
         ? payload.sort((a, b) => a.value - b.value)
         : payload
@@ -42,6 +52,7 @@ const RankingChart = ({ contestants, highlighted }) => {
 
       return (
         <div className="custom-tooltip bg-blue-300 p-2 text-secondary-content max-w-56 md:max-w-96 z-50 rounded-md drop-shadow-lg">
+          <h3 className="font-extrabold"> {episode}</h3>
           {filteredPayload.map((entry) => (
             <div key={entry.name} className="text-secondary-content">
               {entry.value}){" "}
