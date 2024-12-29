@@ -52,7 +52,7 @@ const ContestantCard = ({ contestant, onClick }) => {
         <h3 className="text-center text-lg font-semibold mt-2 text-gray-800">
           {contestant.Name.replace(/-/g, "")}
         </h3>
-        <h4 className="text-center text-md text-gray-600">
+        <h4 className="text-center text-sm text-gray-600">
           {contestant.Company.replace(/-/g, "")}
         </h4>
       </div>
